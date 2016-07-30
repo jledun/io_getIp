@@ -1,0 +1,11 @@
+[Unit]
+Description=get public IP address and publish it to mqtt broker
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /usr/local/bin/app.js
+
+[Install]
+WantedBy=multi-user.target

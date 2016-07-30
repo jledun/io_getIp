@@ -1,0 +1,10 @@
+[Unit]
+Description=update public IP address
+After=timer-sync.target network-online.target
+
+[Timer]
+OnCalendar=*-*-* 00:00:10
+Persistent=true
+
+[Install]
+WantedBy=timers.target
