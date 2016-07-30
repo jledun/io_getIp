@@ -1,0 +1,27 @@
+{
+  "name": "io_getip",
+  "version": "1.0.0",
+  "description": "get public IP address and publish to mqtt broker",
+  "main": "io_getip.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jledun/io_getIp.git"
+  },
+  "keywords": [
+    "public",
+    "IP"
+  ],
+  "author": "Julien Ledun <j.ledun@iosystems.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jledun/io_getIp/issues"
+  },
+  "homepage": "https://github.com/jledun/io_getIp#readme",
+  "dependencies": [
+	  "mqtt"
+  ]
+}

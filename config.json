@@ -1,0 +1,10 @@
+{
+	"mqtt": {
+		"url": "localhost"
+	},
+	"getip": {
+		"options": {
+			"hostname": "jsonip.com"
+		}
+	}
+}
