@@ -1,6 +1,6 @@
 {
   "name": "io_getip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "get public IP address and publish to mqtt broker",
   "main": "io_getip.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/jledun/io_getIp#readme",
   "dependencies": [
-	  "mqtt"
+    "mqtt"
   ]
 }
