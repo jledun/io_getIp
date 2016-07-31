@@ -43,3 +43,4 @@ jspm_packages
 
 # App specific
 app.js
+template.html

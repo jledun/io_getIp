@@ -8,7 +8,7 @@ class io_getip {
 
 	getip() {
 		//~ GET IP ADDRESS WITH JSON IP SERVER
-		let http = require('http');
+		let exec = require( 'child_process' ).exec;
 		let ipAddr = '';
 
 		return new Promise( ( resolve, reject ) => {
@@ -17,23 +17,10 @@ class io_getip {
 			if ( typeof this.conf.getip === "undefined" ) return reject( new Error("No getip settings in config.json") );
 			if ( typeof this.conf.getip.options === "undefined" ) return reject( new Error("No http request options set in config.json") );
 
-			let req = http.request(this.conf.getip.options, ( res ) => {
-
-				res.setEncoding('utf8');
-				res.on('data', ( chunk ) => {
-					ipAddr += chunk;
-				});
-
-				res.on('end', () => {
-					return resolve( JSON.parse( ipAddr ).ip );
-				});
+			exec( `curl https://${this.conf.getip.options.hostname}`, (err, stout, sterr) => {
+					if ( err ) return reject( err );
+					return resolve( JSON.parse( stout ).ip );
 			});
-
-			req.on('error', ( e ) => {
-				return reject( e );
-			});
-
-			req.end();
 		});
 	};
 
@@ -56,7 +43,7 @@ class io_getip {
 				}, (err, result) => {
 					client.end();
 					if ( err ) return reject( err );
-					return resolve('published ' + ipAddr + " to io_getip topic.");
+					return resolve(`published ${ipAddr} to ${topic} topic.`);
 				});
 			});
 
