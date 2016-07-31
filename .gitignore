@@ -40,3 +40,6 @@ jspm_packages
 *~
 .*~
 .*.swp
+
+# App specific
+app.js
