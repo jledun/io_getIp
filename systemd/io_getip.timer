@@ -3,7 +3,8 @@ Description=update public IP address
 After=timer-sync.target network-online.target
 
 [Timer]
-OnCalendar=*-*-* 04:00:00
+OnBootSec=15m
+OnUnitActiveSec=1h
 Persistent=true
 
 [Install]
