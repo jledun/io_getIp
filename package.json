@@ -1,6 +1,6 @@
 {
   "name": "io_getip",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "get public IP address and publish to mqtt broker",
   "main": "io_getip.js",
   "scripts": {
